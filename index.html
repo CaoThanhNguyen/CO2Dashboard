@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>CO2 Dashboard</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+   <div id="nav">
+        <h2>C02 Dashboard</h2>
+        <p>Explore CO2 emission by year. 
+            Current year: <span id="year"></span>
+            <input id="yearInput" type="range" step="1" id="yearInput">
+        </p>
+        <p>Choose between total emissions or emissions per capita.
+            <input type="radio" name="emissionType" value="emissions" checked> Emissions 
+            <input type="radio" name="emissionType" value="emissionsPerCapita"> Emissions Per Capita
+        </p>
+        <p>Click on a country to see its trend by year</p>
+   </div>
+   <section class="container">
+        <div class="graph-container">
+            <svg 
+                version='1.1'
+                baseProfile='full'    
+                xmlns='http://www.w3.org/2000/svg'
+                id='map'>
+            </svg>
+        </div>
+        <div class="graph-container right">
+            <svg 
+                version='1.1'
+                baseProfile='full'    
+                xmlns='http://www.w3.org/2000/svg'
+                id='pie'>
+            </svg>
+            <svg 
+                version='1.1'
+                baseProfile='full'    
+                xmlns='http://www.w3.org/2000/svg'
+                id='bar'>
+            </svg>
+        </div>
+   </section>
+   <div class="tooltip"></div>
+   <script src="https://d3js.org/d3.v4.js"></script>
+   <script src="https://unpkg.com/topojson@3"></script>
+   <script src="map.js"></script>
+   <script src="pie.js"></script>
+   <script src="bar.js"></script>
+   <script src="app.js"></script>
+</body>
+</html>
